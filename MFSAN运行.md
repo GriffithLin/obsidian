@@ -70,5 +70,23 @@ torchvision               0.11.3                 py36_cpu  [cpuonly]  pytorch
 
 
 # 代码阅读
+- `torch.optim.SGD(params, lr=<required parameter>, momentum=0, dampening=0, weight_decay=0, nesterov=False)`
 
-torch.optim.SGD
+```python
+optimizer = torch.optim.SGD([
+
+            {'params': model.sharedNet.parameters()},
+
+            {'params': model.cls_fc_son1.parameters(), 'lr': lr[1]},
+
+            {'params': model.cls_fc_son2.parameters(), 'lr': lr[1]},
+
+            {'params': model.sonnet1.parameters(), 'lr': lr[1]},
+
+            {'params': model.sonnet2.parameters(), 'lr': lr[1]},
+
+        ], lr=lr[0], momentum=momentum, weight_decay=l2_decay)
+```
+https://blog.csdn.net/weixin_46221946/article/details/122644487
+[weight_decay]（权重衰退）-l2正则项
+momentum-动量，惯性，即更新的时候在一定程度上保留之前更新的方向。
