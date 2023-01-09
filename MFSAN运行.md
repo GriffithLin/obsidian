@@ -18,7 +18,7 @@ https://blog.csdn.net/frighting_ing/article/details/121863387
 ```python
 root_path = "./dataset/"
 ```
-2、此环境下，报错-RuntimeError: CuDNN error: CUDNN_STATUS_SUCCESS
+~~2、此环境下，报错-RuntimeError: CuDNN error: CUDNN_STATUS_SUCCESS~~
 ```
 Traceback (most recent call last):
   File ".\mfsan.py", line 159, in <module>
@@ -56,11 +56,6 @@ Test set: Average loss: nan, Accuracy: 100/2817 (3%)
 source1 accnum 99, source2 accnum 100
 webcam dslr to amazon amazon max correct: 100
 ```
-
-
-
-
-
 
 ## 解决：
 1、使用实验室的旧服务器：cuda版本为9.0（如前文所述安装环境，不用设置torch.backends.cudnn.benchmark = True）
