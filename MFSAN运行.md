@@ -61,6 +61,7 @@ webcam dslr to amazon amazon max correct: 100
 
 
 
-## 解决：使用
-
-
+## 解决：1、使用实验室的旧服务器：cuda版本为9.0（如前文所述安装环境，不用设置torch.backends.cudnn.benchmark = True）
+mmd损失不为nan
+运行结果：Test set: Average loss: 0.0881, Accuracy: 2033/2817 (72%)
+2、
