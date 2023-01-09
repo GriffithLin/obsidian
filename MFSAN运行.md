@@ -102,15 +102,31 @@ pred = pred.data.max(1)[1]
 https://blog.csdn.net/qq_38178543/article/details/115254419
 pred.data.max(1)[1]中第一个1表示，找第2维的最大值；[1]表示，output.data.max(1)会返回一组数组，第一个是output数组中第1维度的最大值是多少，第二个是最大值的位置在哪里。[1]表示取位置数组为返回值。
 
+
 - 损失函数 nll_loss
+torch.nn.functional.nll_loss(_input_, _target_, _weight=None_, _size_average=None_, _ignore_index=- 100_, _reduce=None_, _reduction='mean'_)
 https://blog.csdn.net/GentleCP/article/details/106602179
-https://zhuanlan.zhihu.com/p/383044774
-https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html
+https://pytorch.org/docs/stable/generated/torch.nn.functional.nll_loss.html#torch.nn.functional.nll_loss
+```python
+# input is of size N x C = 3 x 5
+input = torch.randn(3, 5, requires_grad=True)
+# each element in target has to have 0 <= value < C
+target = torch.tensor([1, 0, 4])
+output = F.nll_loss(F.log_softmax(input, dim=1), target)
+output.backward()
+```
+
+```python
+pred_src = self.cls_fc_son1(data_src)
+cls_loss = F.nll_loss(F.log_softmax(pred_src, dim=1), label_src)
+```
+
+
+
 
 # 计算程序使用时间
 https://zhuanlan.zhihu.com/p/584944483
 ```python
-```text
 import time
 start = time.clock()
 
@@ -118,7 +134,6 @@ start = time.clock()
 
 end = time.clock()
 print str(end-start)
-```
 ```
 只计算当前程序运行的CPU时间
 python 的标准库手册推荐在任何情况下尽量使用time.clock()——但是这个函数在windows下返回的是真实时间（wall time）。
