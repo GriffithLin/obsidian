@@ -61,7 +61,9 @@ webcam dslr to amazon amazon max correct: 100
 
 
 
-## 解决：1、使用实验室的旧服务器：cuda版本为9.0（如前文所述安装环境，不用设置torch.backends.cudnn.benchmark = True）
+
+## 解决：
+1、使用实验室的旧服务器：cuda版本为9.0（如前文所述安装环境，不用设置torch.backends.cudnn.benchmark = True）
 mmd损失不为nan
 运行结果：Test set: Average loss: 0.0881, Accuracy: 2033/2817 (72%)
 2、使用实验室电脑 
@@ -69,4 +71,5 @@ mmd损失不为nan
 pytorch                   1.10.2              py3.6_cpu_0    pytorch
 torchvision               0.11.3                 py36_cpu  [cpuonly]  pytorch
 也没有nan的问题。
-但是运行太慢
+但是运行太慢。
+
