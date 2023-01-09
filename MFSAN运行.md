@@ -88,7 +88,8 @@ optimizer = torch.optim.SGD([
         ], lr=lr[0], momentum=momentum, weight_decay=l2_decay)
 ```
 https://blog.csdn.net/weixin_46221946/article/details/122644487
-weight_decay（权重衰退）-l2正则项
+weight_decay（权重衰退）-l2正则项。
+![[Pasted image 20230109204703.png]]计算梯度$g_t$时，将网络参数$\theta_{t-1}$的一部分数值算入梯度。使得参数更新时，不仅更新损失计算而来的梯度，而且参数的绝对值缩小。
 momentum-动量，惯性，即更新的时候在一定程度上保留之前更新的方向。
 
 
