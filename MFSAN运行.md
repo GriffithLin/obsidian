@@ -74,7 +74,7 @@ torchvision               0.11.3                 py36_cpu  [cpuonly]  pytorch
 
 ```python
 optimizer = torch.optim.SGD([
-
+			# 需要训练的参数
             {'params': model.sharedNet.parameters()},
 
             {'params': model.cls_fc_son1.parameters(), 'lr': lr[1]},
@@ -84,9 +84,20 @@ optimizer = torch.optim.SGD([
             {'params': model.sonnet1.parameters(), 'lr': lr[1]},
 
             {'params': model.sonnet2.parameters(), 'lr': lr[1]},
-
+		# 设置其他参数学习率、动量和L2权重衰减
         ], lr=lr[0], momentum=momentum, weight_decay=l2_decay)
 ```
 https://blog.csdn.net/weixin_46221946/article/details/122644487
-[weight_decay]（权重衰退）-l2正则项
+weight_decay（权重衰退）-l2正则项
 momentum-动量，惯性，即更新的时候在一定程度上保留之前更新的方向。
+
+
+- .data.max(2, keepdim=True)[1]
+```python
+pred = pred.data.max(1)[1]
+
+            correct += pred.eq(target.data.view_as(pred)).cpu().sum()
+```
+https://blog.csdn.net/qq_38178543/article/details/115254419
+pred.data.max(1)[1]中第一个1表示，找第2维的最大值；[1]表示，output.data.max(1)会返回一组数组，第一个是output数组中第1维度的最大值是多少，第二个是最大值的位置在哪里。[1]表示取位置数组为返回值。
+
