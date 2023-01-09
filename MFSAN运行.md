@@ -44,7 +44,7 @@ RuntimeError: CuDNN error: CUDNN_STATUS_SUCCESS
 torch.backends.cudnn.benchmark = True
 ```
 
-# 问题：mmd学习率一开始为nan，无法更新模型
+# 问题：mmd损失始终为nan，无法更新模型
 
 ```
 Train source1 iter: 10 [(0%)]   Loss: nan       soft_Loss: 3.430207     mmd_Loss: nan   l1_Loss: 0.001498
