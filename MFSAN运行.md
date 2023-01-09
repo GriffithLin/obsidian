@@ -102,6 +102,10 @@ pred = pred.data.max(1)[1]
 https://blog.csdn.net/qq_38178543/article/details/115254419
 pred.data.max(1)[1]中第一个1表示，找第2维的最大值；[1]表示，output.data.max(1)会返回一组数组，第一个是output数组中第1维度的最大值是多少，第二个是最大值的位置在哪里。[1]表示取位置数组为返回值。
 
+- 损失函数 nll_loss
+https://blog.csdn.net/GentleCP/article/details/106602179
+https://zhuanlan.zhihu.com/p/383044774
+https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html
 
 # 计算程序使用时间
 https://zhuanlan.zhihu.com/p/584944483
