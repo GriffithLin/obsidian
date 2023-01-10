@@ -5,6 +5,7 @@ Webcam：795 张图像，图像表现出明显的噪点，颜色和白平衡伪�
 DSLR：498 张图像，每类 5 个对象，每个对象从不同视点平均拍摄 3 次
 ## 考虑更小的数据集？
 数字识别数据集 -像素较小，这个具体应用有问题吗？
+
 # 环境配置
 -   python 3.6
 -   pytorch 0.4.1
@@ -132,6 +133,8 @@ cls_loss = F.nll_loss(F.log_softmax(pred_src, dim=1), label_src)
 
 交叉熵损失就是LogSoftmax+NLLLoss
 
+- Pytorch nn.Module
+https://blog.csdn.net/weixin_42018112/article/details/90084419
 
 # 计算程序使用时间
 https://zhuanlan.zhihu.com/p/584944483
