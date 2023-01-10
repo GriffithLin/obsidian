@@ -105,7 +105,7 @@ pred.data.max(1)[1]中第一个1表示，找第2维的最大值；[1]表示，ou
 
 - 损失函数 nll_loss 负对数似然损失
 torch.nn.functional.nll_loss(_input_, _target_, _weight=None_, _size_average=None_, _ignore_index=- 100_, _reduce=None_, _reduction='mean'_)
-https://blog.csdn.net/GentleCP/article/details/106602179
+https://blog.csdn.net/qq_40210586/article/details/115279548
 https://pytorch.org/docs/stable/generated/torch.nn.functional.nll_loss.html#torch.nn.functional.nll_loss
 ```python
 # input is of size N x C = 3 x 5
@@ -121,7 +121,7 @@ pred_src = self.cls_fc_son1(data_src)
 cls_loss = F.nll_loss(F.log_softmax(pred_src, dim=1), label_src)
 ```
 
-
+交叉熵损失就是LogSoftmax+NLLLoss
 
 
 # 计算程序使用时间
