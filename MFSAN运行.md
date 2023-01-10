@@ -105,6 +105,8 @@ pred.data.max(1)[1]中第一个1表示，找第2维的最大值；[1]表示，ou
 
 - 损失函数 nll_loss 负对数似然损失
 torch.nn.functional.nll_loss(_input_, _target_, _weight=None_, _size_average=None_, _ignore_index=- 100_, _reduce=None_, _reduction='mean'_)
+
+https://zhuanlan.zhihu.com/p/35709139
 https://blog.csdn.net/qq_40210586/article/details/115279548
 https://pytorch.org/docs/stable/generated/torch.nn.functional.nll_loss.html#torch.nn.functional.nll_loss
 ```python
