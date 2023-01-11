@@ -10,6 +10,7 @@
 conda create -n TLlib python=3.6
 conda activate TLlib
 TLlib安装：
+1、
 pip install -i https://test.pypi.org/simple/ tllib==0.4
 报错
 ```
@@ -17,3 +18,7 @@ ERROR: Could not find a version that satisfies the requirement matplotlib (from 
 ERROR: No matching distribution found for matplotlib
 ```
 pip install matplotlib **-i http://pypi.douban.com/simple --trusted-host pypi.douban.com**
+2、python setup.py install
+
+RuntimeError: Cannot install on Python version 3.6.15; only versions >=3.7,<3.11 are supported.
+
