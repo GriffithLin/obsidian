@@ -22,3 +22,4 @@ pip install matplotlib **-i http://pypi.douban.com/simple --trusted-host pypi.do
 
 RuntimeError: Cannot install on Python version 3.6.15; only versions >=3.7,<3.11 are supported.
 
+conda config --show channels
