@@ -23,3 +23,7 @@ pip install matplotlib **-i http://pypi.douban.com/simple --trusted-host pypi.do
 RuntimeError: Cannot install on Python version 3.6.15; only versions >=3.7,<3.11 are supported.
 
 conda config --show channels
+
+
+
+error: numpy 1.24.1 is installed but numpy<1.24,>=1.18 is required by {'numba'}
