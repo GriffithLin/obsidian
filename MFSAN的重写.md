@@ -40,7 +40,7 @@ https://blog.csdn.net/qq_36915686/article/details/122136299
 CUDA_VISIBLE_DEVICES=0 python dann.py data/office31 -d Office31 -s A -t W -a resnet50 --epochs 20 --seed 1 --log logs/dann/Office31_A2W
 ```
 
-
+ran.crop
 ```
 CUDA_VISIBLE_DEVICES=0 python mfsan.py data/officecaltech -d officecaltech -s W D -t A -a resnet50 --epochs 20 --seed 1 --log logs/mfsan/officecaltech_WD2A 
 ```
