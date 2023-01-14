@@ -30,3 +30,17 @@ webcam dslr to amazon amazon max correct: 901
 https://zhuanlan.zhihu.com/p/73711222
 设置 `torch.backends.cudnn.benchmark=True` 将会让程序在开始时花费一点额外时间，为整个网络的每个卷积层搜索最适合它的卷积实现算法，进而实现网络的加速。适用场景是网络结构固定（不是动态变化的），网络的输入形状（包括 batch size，图片大小，输入的通道）是不变的，其实也就是一般情况下都比较适用。反之，如果卷积层的设置一直变化，将会导致程序不停地做优化，反而会耗费更多的时间。
 
+
+
+
+
+命令：
+```
+CUDA_VISIBLE_DEVICES=0 python dann.py data/office31 -d Office31 -s A -t W -a resnet50 --epochs 20 --seed 1 --log logs/dann/Office31_A2W --phase test
+```
+
+
+```
+```
+CUDA_VISIBLE_DEVICES=0 python mfsan.py data/officecaltech -d officecaltech -s WD -t A -a resnet50 --epochs 20 --seed 1 --log logs/dann/Office31_A2W --phase test
+```
