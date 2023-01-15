@@ -45,7 +45,7 @@ CUDA_VISIBLE_DEVICES=0 python dann.py data/OfficeCaltech -d OfficeCaltech -s A -
 
 ran.crop
 ```
-CUDA_VISIBLE_DEVICES=0 python mfsan.py data/OfficeCaltech -d officecaltech -s W D -t A -a resnet50 --epochs 20 --seed 8 --log logs/mfsan/officecaltech_WD2A 
+CUDA_VISIBLE_DEVICES=0 python mfsan.py dataset -d OfficeCaltech -s W D -t A -a resnet50 --epochs 20 --seed 8 --log logs/mfsan/officecaltech_WD2A 
 ```
 
 CUDA_VISIBLE_DEVICES=0 ？
