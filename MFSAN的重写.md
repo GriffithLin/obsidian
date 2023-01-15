@@ -37,7 +37,7 @@ https://blog.csdn.net/qq_36915686/article/details/122136299
 
 命令：
 ```
-CUDA_VISIBLE_DEVICES=0 python dann.py data/officecaltech -d Office31 -s A -t W -a resnet50 --epochs 20 --seed 1 --log logs/dann/Office31_A2W
+CUDA_VISIBLE_DEVICES=0 python dann.py data/officecaltech -d officecaltech -s A -t W -a resnet50 --epochs 20 --seed 1 --log logs/dann/officecaltech_A2W
 ```
 
 ran.crop
