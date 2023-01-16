@@ -45,7 +45,9 @@ CUDA_VISIBLE_DEVICES=0 python dann.py data/OfficeCaltech -d OfficeCaltech -s A -
 
 ran.crop
 ```
-CUDA_VISIBLE_DEVICES=0 python MyMfsan.py dataset -d OfficeCaltech -s W D -t A -a resnet50 --epochs 20 --seed 8 --log logs/mfsan/officecaltech_WD2A 
+CUDA_VISIBLE_DEVICES=0 python MyMfsan.py data -d OfficeCaltech -s W D -t A -a resnet50 --epochs 20 --seed 8 --log logs/mfsan/officecaltech_WD2A 
+
+CUDA_VISIBLE_DEVICES=0 python MyMfsan.py data -d Office31 -s W D -t A -a resnet50 --epochs 20 --seed 8 --log logs/mfsan/office31_WD2A 
 
 CUDA_VISIBLE_DEVICES=0 python MyMfsan.py /data3/linming/Transfer-Learning-Library/examples/domain_adaptation/image_classification/data/office31 -d Office31 -s W D -t A -a resnet50 --epochs 20 --seed 8 --log logs/mfsan/office31_WD2A
 ```
