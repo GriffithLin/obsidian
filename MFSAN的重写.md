@@ -34,7 +34,6 @@ https://zhuanlan.zhihu.com/p/73711222
 https://blog.csdn.net/qq_36915686/article/details/122136299
 
 
-
 命令：
 ```
 CUDA_VISIBLE_DEVICES=0 python dann.py data/office31 -d Office31 -s A -t W -a resnet50 --epochs 20 --seed 1 --log logs/dann/Office31_A2W
@@ -53,3 +52,7 @@ CUDA_VISIBLE_DEVICES=0 python MyMfsan.py /data3/linming/Transfer-Learning-Librar
 ```
 
 CUDA_VISIBLE_DEVICES=0 ？
+
+
+3、RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的tensor
