@@ -60,22 +60,17 @@ torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的te
 
 
 ## 运行参数
+
+已经支持的
 ```
-    parser = argparse.ArgumentParser(description='MFSAN for multisource Unsupervised Domain Adaptation')
-
 # dataset parameters
-
     parser.add_argument('root', metavar='DIR',
 
                         help='root path of dataset')
-
-    parser.add_argument('-d', '--data', metavar='DATA', default='Office31', choices=utils.get_dataset_names(),
-
-                        help='dataset: ' + ' | '.join(utils.get_dataset_names()) +
-
-                             ' (default: Office31)')
-
-    parser.add_argument('-s', '--source', help='source domain(s)', nargs='+')
+                        
+    parser.add_argument('-d', '--data', metavar='DATA', default='Office31', choices=utils.get_dataset_names(),help='dataset: ' + ' | '.join(utils.get_dataset_names()) +' (default: Office31)')
+    
+	parser.add_argument('-s', '--source', help='source domain(s)', nargs='+')
 
     parser.add_argument('-t', '--target', help='target domain(s)', nargs='+')
 
@@ -94,6 +89,16 @@ torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的te
     parser.add_argument('--no-hflip', action='store_true',
 
                         help='no random horizontal flipping during training')
+```
+还待支持的
+```
+
+
+
+
+
+
+
 
     #TLlib的设置
 
