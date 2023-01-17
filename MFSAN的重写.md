@@ -57,8 +57,11 @@ CUDA_VISIBLE_DEVICES=0 python MyMfsan.py /data3/linming/Transfer-Learning-Librar
 CUDA_VISIBLE_DEVICES=0 ？
 
 
-3、RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
-torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的tensor
+3、遇到问题：RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的tensor。
+意思是模型开启了gpu模式，要求输入为gpu版本的tensor 和 实际输入cpu版本的tensor不匹配。或者反之，模型没有开启gpu模式，输入的tensor为GPU版本。
+需要检查模型和数据是否都为gpu模式。
+model.cuda() 和source_data, source_label = source_data.cuda(), source_label.cuda()
 
 
 
@@ -150,8 +153,6 @@ torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的te
 还待支持的
 ```python
 # model parameters
-
-        #??
 
     parser.add_argument('--bottleneck-dim', default=256, type=int,
 
