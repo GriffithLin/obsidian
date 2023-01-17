@@ -62,7 +62,7 @@ torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的te
 ## 运行参数
 
 已经支持的
-```
+```python
 # dataset parameters
     parser.add_argument('root', metavar='DIR',
 
@@ -74,51 +74,19 @@ torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的te
 
     parser.add_argument('-t', '--target', help='target domain(s)', nargs='+')
 
-  
-
-        #√
-
     parser.add_argument('--resize-size', type=int, default=224,
 
                         help='the image size after resizing')
 
   
 
-     #action  就是--no-hflip 之后不用指定参数，  存为true  
+     #action  就是--no-hflip 之后不用指定参数，  自动存为true  
 
     parser.add_argument('--no-hflip', action='store_true',
 
                         help='no random horizontal flipping during training')
-```
-还待支持的
-```
 
-
-
-
-
-
-
-
-    #TLlib的设置
-
-    # parser.add_argument('--train-resizing', type=str, default='default')
-
-    # parser.add_argument('--val-resizing', type=str, default='default')
-
-    # parser.add_argument('--norm-mean', type=float, nargs='+',
-
-    #                     default=(0.485, 0.456, 0.406), help='normalization mean')
-
-    # parser.add_argument('--norm-std', type=float, nargs='+',
-
-    #                     default=(0.229, 0.224, 0.225), help='normalization std')
-
-  
-
-    #改为mfsan原来算法的设置
-
-    parser.add_argument('--norm-mean', type=float, nargs='+',
+	parser.add_argument('--norm-mean', type=float, nargs='+',
 
                         default=(0, 0, 0), help='normalization mean')
 
@@ -142,9 +110,7 @@ torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的te
 
                         help='Random resize aspect ratio (default: 0.75 1.33)')
 
-  
-
-# model parameters
+	# model parameters
 
     parser.add_argument('-a', '--arch', metavar='ARCH', default='resnet18',
 
@@ -156,6 +122,32 @@ torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的te
 
                              ' (default: resnet18)')
 
+	parser.add_argument('--scratch', action='store_true', help='whether train from scratch.')
+
+	# training parameters
+	parser.add_argument('-b', '--batch-size', default=32, type=int,
+
+					metavar='N',
+
+					help='mini-batch size (default: 32)')
+
+	parser.add_argument('--lr', '--learning-rate', default=0.01, type=float,
+
+					metavar='LR', help='initial learning rate', dest='lr')
+
+	parser.add_argument('--seed', default=None, type=int,
+
+					help='seed for initializing training. ')
+					
+	parser.add_argument("--log", type=str, default='dann',
+
+					help="Where to save logs, checkpoints and debugging images.")
+
+```
+还待支持的
+```python
+# model parameters
+
         #??
 
     parser.add_argument('--bottleneck-dim', default=256, type=int,
@@ -166,9 +158,6 @@ torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的te
 
                         help='no pool layer after the feature extractor.')
 
-    parser.add_argument('--scratch', action='store_true', help='whether train from scratch.')
-
-        #
 
     parser.add_argument('--trade-off', default=1., type=float,
 
@@ -176,15 +165,6 @@ torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的te
 
 # training parameters
 
-    parser.add_argument('-b', '--batch-size', default=32, type=int,
-
-                        metavar='N',
-
-                        help='mini-batch size (default: 32)')
-
-    parser.add_argument('--lr', '--learning-rate', default=0.01, type=float,
-
-                        metavar='LR', help='initial learning rate', dest='lr')
 
     parser.add_argument('--lr-gamma', default=0.001, type=float, help='parameter for lr scheduler')
 
@@ -216,17 +196,12 @@ torch.cuda.FloatTensor和torch.FloatTensor，gpu版本的tensor和cpu版本的te
 
                         metavar='N', help='print frequency (default: 100)')
 
-    parser.add_argument('--seed', default=None, type=int,
-
-                        help='seed for initializing training. ')
 
     parser.add_argument('--per-class-eval', action='store_true',
 
                         help='whether output per-class accuracy during evaluation')
 
-    parser.add_argument("--log", type=str, default='dann',
 
-                        help="Where to save logs, checkpoints and debugging images.")
 
     parser.add_argument("--phase", type=str, default='train', choices=['train', 'test', 'analysis'],
 
