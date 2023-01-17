@@ -149,6 +149,16 @@ model.cuda() 和source_data, source_label = source_data.cuda(), source_label.cud
 
 					help="Where to save logs, checkpoints and debugging images.")
 
+	parser.add_argument('--momentum', default=0.9, type=float, metavar='M',
+
+                        help='momentum')
+
+    parser.add_argument('--wd', '--weight-decay', default=1e-3, type=float,
+
+                        metavar='W', help='weight decay (default: 1e-3)',
+
+                        dest='weight_decay')
+
 ```
 还待支持的
 ```python
@@ -174,15 +184,7 @@ model.cuda() 和source_data, source_label = source_data.cuda(), source_label.cud
 
     parser.add_argument('--lr-decay', default=0.75, type=float, help='parameter for lr scheduler')
 
-    parser.add_argument('--momentum', default=0.9, type=float, metavar='M',
 
-                        help='momentum')
-
-    parser.add_argument('--wd', '--weight-decay', default=1e-3, type=float,
-
-                        metavar='W', help='weight decay (default: 1e-3)',
-
-                        dest='weight_decay')
 
     parser.add_argument('-j', '--workers', default=2, type=int, metavar='N',
 
