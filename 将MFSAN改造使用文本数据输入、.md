@@ -4,6 +4,7 @@
 
 https://www.bilibili.com/video/BV1734y167T3/?spm_id_from=333.788.top_right_bar_window_custom_collection.content.click&vd_source=d48bf1621768c25d8800920c0092d183
 文本卷积是在一维的，字的维度上的卷积
+![[Pasted image 20230206161842.png]]
 
 DistilBert
 
