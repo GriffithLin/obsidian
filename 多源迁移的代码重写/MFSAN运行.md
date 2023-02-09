@@ -149,3 +149,5 @@ print str(end-start)
 ```
 只计算当前程序运行的CPU时间
 python 的标准库手册推荐在任何情况下尽量使用time.clock()——但是这个函数在windows下返回的是真实时间（wall time）。
+
+要将clock_t转换为秒数，需要除以宏CLOCKS_PER_SEC生成的值，即为秒数
