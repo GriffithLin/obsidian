@@ -22,6 +22,14 @@
 
 warmup和epoch
 需要根据训练和验证集的损失曲线取动态调整。
-
+其中warmup：
+```
+训练初期损失较大，使用小的学习率，避免过拟合。
+训练中期，有先验知识，学习率上升，加快收敛。
+训练后期使用小学习率，稳定模型。
+通常取总 epoch 数的5% 到 20%
+```
+https://blog.csdn.net/weixin_48018951/article/details/130382183
+https://blog.csdn.net/Freeandeasy_roni/article/details/129047249
 
 冻结层数——目前冻结九层，想要研究两个方向①怎么冻结对模型训练好、怎么看出来对模型有利②冻结几层不会出现mcc=0
