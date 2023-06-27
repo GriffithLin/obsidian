@@ -77,16 +77,43 @@ DDD2vcf.py
 补充说明：这一步依据突变前后序列进行了该数据来源内部的去重（使用”CHROM", "POS", "REF", "ALT"关键字），并且去除了插入缺失长度不能被三整除的突变。设置context=True，获取插入缺失突变上下文序列。设置context=False，获取突变起始点上下文序列。
 
 # 3、不同来源数据处理
-(1)：
+(1)：对不同来源的数据集的筛选插入缺失长度，去除重复和矛盾的样本,对数据集做close-by，可以得到处理好的数据，方便从中分理出测试集
 
 准备：需要将训练集的csv文件放在 “/context/100/”目录下，100为截取的序列上下文长度，如果设置别的长度需要相应更改。
 
 代码：progress_content.py
+输入：inframe_context_hgmd_dm_inframe100.csv，gnomAD_inframe_PASS_noVEP_AC100.csv  
+inframe_context_TwoStar_p_inframe100_seq.csv
+inframe_context_TwoStar_n_inframe100_seq.csv"
+inframe_context_oneStar_p_inframe100_seq.csv"
+inframe_context_oneStar_n_inframe100_seq.csv
+../test/DDD/test_contexts100.csv
+
+输出: 当前文件夹下输出 closeBy_hgmd.vcf 、closeBy_gnomAD.vcf  作为分离出测试集的文件。
+withgross的文件夹下输出数据的vcf文件 clivar_pos.vcf 、clinvar_neg.vcf
+result文件夹下输出五折交叉验证的数据的tsv文件，区分突变前后存放
+fea文件夹下输出所有训练集和测试集的tsv文件，区分突变前后存放， dev1.tsv表示DDD测试集
 
 
 
+(2)：对比2018.2pro版本的HGMD数据得到更新数据，从更新的数据中，以基因为依据，每个基因随机取一条组成新的测试集。输出新测试集的vcf文件
+
+代码：get_new_testdataset.ipynb，
+输入：closeBy_hgmd.vcf 、closeBy_gnomAD.vcf 、HGMD/hgmd_pro_2018.2_hg38.vcf、HGMD/hgmd_dm_Nogross.vcf、HGMD/hgmd_dm_Onlygross.vcf
+输出: hgmd_test_gene.csv、gnomAD_test_gene.csv
 
 
-(2)：
+(3)：和progress_content.py功能类似，但是考虑新测试集。
 
-get_new_testdataset.ipynb以获得新测试集的vcf文件，progress_content_newtest.py考虑新测试集，重新处理数据。
+准备：需要将训练集的csv文件放在 “/context/100/”目录下，100为截取的序列上下文长度，如果设置别的长度需要相应更改。
+
+代码：progress_content_newtest.py
+输入：inframe_context_hgmd_dm_inframe100.csv，gnomAD_inframe_PASS_noVEP_AC100.csv  
+inframe_context_TwoStar_p_inframe100_seq.csv
+inframe_context_TwoStar_n_inframe100_seq.csv"
+inframe_context_oneStar_p_inframe100_seq.csv"
+inframe_context_oneStar_n_inframe100_seq.csv
+../test/DDD/test_contexts100.csv
+输出: 
+result_newtest_文件夹下输出 划分出新测试集后的五折交叉验证的数据的tsv文件，区分突变前后存放
+fea文件夹下输出所有训练集和测试集的tsv文件，区分突变前后存放 dev1.tsv表示DDD测试集，dev2.tsv表示新的分离出的测试集
