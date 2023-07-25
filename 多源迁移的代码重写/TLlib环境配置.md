@@ -35,6 +35,8 @@ conda create -n myenv python=3.6 2.
 #3. 安装ipykernel包： 
 pip install --user ipykernel 
 #4. 将虚拟环境加入Jupyter： 
+
+
 python -m ipykernel install --user --name=myenv
 ```
 
