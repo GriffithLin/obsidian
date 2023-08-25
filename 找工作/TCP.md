@@ -17,3 +17,12 @@ struct block_node {
 	bool operator<(const block_node t) const { return begin < t.begin; } 
 };
 ```
+
+## tcp_receiver
+比特流的64位字符编号和 TCP中的32为字符编号转化。 （TCP中有 isn ）
+连接简历和释放符号的判断
+窗口长度
+![[Pasted image 20230825213119.png]]
+
+## tcp_sender
+累积确认
