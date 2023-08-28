@@ -26,3 +26,15 @@ struct block_node {
 
 ## tcp_sender
 累积确认
+
+
+
+
+
+
+# lab1
+
+计时器——超时重传机制
+![[Pasted image 20230828101841.png]]
+
+
