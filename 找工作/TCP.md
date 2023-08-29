@@ -19,8 +19,10 @@ struct block_node {
 };
 ```
 
-## tcp_receiver
-比特流的64位字符编号和 TCP中的32为字符编号转化。 （TCP中有 isn ）
+总结：set实现流重组器，将带索引的字节流碎片重组成有序的字节流
+## lab2：tcp_receiver
+1、比特流的64位字符编号和 TCP中的32为字符编号转化。 （TCP中有 isn ——Initial Sequence Number）
+2、实现一个基于滑动窗口的TCP接收端，解析tcpSegment
 连接简历和释放符号的判断
 窗口长度
 ![[Pasted image 20230825213119.png]]
