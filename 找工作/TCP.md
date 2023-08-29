@@ -1,13 +1,14 @@
 ![[Pasted image 20230825160057.png]]
 
 Modern C++实现
-## byte_stream  有序字节流类
+## lab0  byte_stream  有序字节流类
 
-std::deque 实现一个带容量的队列，一头读一头写，负责和上层交互。写操作被分为了peek（读取）和pop（弹出）两部分
-容量：_capacity
-write、peek_output、pop_output
+std::deque 实现一个带容量的队列，一头读一头写，负责和上层交互。读操作被分为了peek（读取）和pop（弹出）两部分
+变量：_capacity
+方法：write、peek_output、pop_output
 
-## 流重组器（stream reassembler） ——带索引的字节流碎片重组成有序的字节流，碎片可能交叉、乱序。或者只包含EOF标志的空串
+总结：使用deque 实现一个有序字节流类（in-order byte stream），使之支持读写、容量控制
+## lab1：流重组器（stream reassembler） ——带索引的字节流碎片重组成有序的字节流，碎片可能交叉、乱序。或者只包含EOF标志的空串
 std::set （红黑树）
 ```C++
 struct block_node { 
