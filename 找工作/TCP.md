@@ -51,4 +51,10 @@ ack_received(ackno, window_size)：更新window_size，以及累计确认。
 
 
 
+
+. That said, not everything will be that simple, and there are
+some subtleties that involve the “global” behavior of the overall connection. The hardest part
+will be deciding when to fully terminate a TCPConnection and declare it no longer “active.”
+
+
 # 构造函数初始化列表中对变量的初始化顺序与变量的声明顺序一致
