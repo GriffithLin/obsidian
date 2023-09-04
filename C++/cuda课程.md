@@ -16,3 +16,10 @@ warp和线程之间的切换开销，约等于0 .
 dim3 grid（4,3）
 使用二维grid，分配block块。
 <<<grid  ,  1>>> 
+
+## 8
+cuda错误检测宏
+
+## 9  cuda计时 - 权威的计时方法
+![[Pasted image 20230904160453.png]]
+cudaEventSynchronize  cpu等待  cuda 打（时间）点结束
