@@ -23,3 +23,5 @@ cuda错误检测宏
 ## 9  cuda计时 - 权威的计时方法
 ![[Pasted image 20230904160453.png]]
 cudaEventSynchronize  cpu等待  cuda 打（时间）点结束
+# 11
+知乎 
