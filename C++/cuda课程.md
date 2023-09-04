@@ -24,4 +24,22 @@ cuda错误检测宏
 ![[Pasted image 20230904160453.png]]
 cudaEventSynchronize  cpu等待  cuda 打（时间）点结束
 # 11
-知乎 
+TODO 知乎——dropout float4. 
+向量化  向量加法。
+
+## 12 GPU硬件能力查询  （跳过）
+
+
+## 13  cpu架构
+![[Pasted image 20230904214013.png]]
+
+
+①级数越多   独立电路越多、芯片面积和功耗增加
+②不经常满载——性价比不高
+由于各个stage的时间不同，不能保证经常满载
+
+## 14 gpu架构和峰值性能
+SM的内部结构
+
+
+## 15 ！！  gpu的内存层次结构
