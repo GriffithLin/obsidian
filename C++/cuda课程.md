@@ -72,5 +72,42 @@ scan：高阶、用到再看
 sort类：比较难
 坐标变换类：TODO！！： 公众号 transpose坐标变换
 
-## 18 reduce
+## 18 19 reduce0
+
+![[Pasted image 20230905200637.png]]
+
+## 20 reduce 1  消除了 前三次 warp divergent
+使得一个block内的所有线程都在工作。而不是有一般的线程在等待。
+
+volta架构之后，采用了 独立线程调度，即每个线程有了自己单独的指令指针，而非一个warp共享一个指令指针。
+
+## 21  reduce 2   消除shared memory bank conflict
+方式比较固定
+相加方式改为 前一半 加上后一半。
+
+Padding  TODO 理解。
+TODO： Permute较难
+
+## 22 reduce 3 让一个block的后128个线程干活
+在加载显存数据到smem 的时候干活，将后一半的数据加到前面来
+
+## 23 reduce 4
+对于 仅一个warp的轮次，采用warp级别的同步语句，减少开销。 性能提升巨大
+
+// TODO  我觉得不需要x变量，   nv官方建议这样的写法？？
+
+## 24 reduce 5   完全展开for循环   省掉for循环的判断和加法指令
+
+省掉了 for循环的 计数模块
+
+## 25 reduce 6
+![[Pasted image 20230905213229.png]]
+
+在此调用 对 每个block的结果求和
+## 26 warp层面的 reduce
+TODO  nv的文档
+数据量多的时候  block层面的reduce 好
+数据量少  warp层面。   临界点？
+
+
 
