@@ -118,3 +118,42 @@ TODO  nv的文档
 ## 29
 引入shared memory 反而性能下降，因为bank confilt
 TODO：解决这个问题
+
+
+
+##  30 copy_if
+pos = atomicAdd(&l_n, 1) ;  原子级加法，返回值为 更新前 的l_n的值
+
+第一种优化：使用shared_memory，省去了显存上的atomicAdd，转化为 shared_memory的原子加。
+在block内部，先累积好。 使用shared_memory计数。
+再一个block选一个进程，进行全局累加，累加的过程中block内部的缓存（这里是l_n），记录为block的全局的偏移值。
+
+## 31 讲了fp16 和fp32的区别， 基础知识
+
+## 32
+
+避免 warp divengence 和 空闲线程
+
+处理多个half  要安培及以上架构才能用
+
+内存对齐才能、向量化读
+
+
+
+
+
+
+
+
+
+
+
+- AI模型性能优化知识，从易到难，易的比如resnet和transformer encoder的模型结构、某些重要算子的公式和可能的面试问题，难的比如int8量化的各种细节和算子融合的实际例子，基于以上两者，穿插一些CPU和GPU体系结构知识
+    
+- 实战项目，包含int8量化（pytorch）和CPU上手写矩阵乘法并优化。
+    
+- x86 CPU体系结构从AI模型性能优化部署角度的认识理解
+    
+- x86 CPU手写矩阵乘法路线指导和其性能优化的相关手段
+
+![[Pasted image 20230906224749.png]]
