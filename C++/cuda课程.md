@@ -77,7 +77,7 @@ sort类：比较难
 ![[Pasted image 20230905200637.png]]
 
 ## 20 reduce 1  消除了 前三次 warp divergent
-使得一个block内的所有线程都在工作。而不是有一般的线程在等待。
+使得一个block内的所有线程都在工作。而不是有一半的线程在等待。
 
 volta架构之后，采用了 独立线程调度，即每个线程有了自己单独的指令指针，而非一个warp共享一个指令指针。
 
@@ -89,6 +89,9 @@ Padding  TODO 理解。
 TODO： Permute较难
 
 ## 22 reduce 3 让一个block的后128个线程干活
+//TODO  让gridsize缩小一倍。
+这里是让blocksize 缩小一倍。
+
 在加载显存数据到smem 的时候干活，将后一半的数据加到前面来
 
 ## 23 reduce 4
@@ -103,7 +106,8 @@ TODO： Permute较难
 ## 25 reduce 6
 ![[Pasted image 20230905213229.png]]
 
-在此调用 对 每个block的结果求和
+加了个循环，使得分配的block的线程多次搬运数据。  而不是只有一次。
+方便再次调用 对 每个block的结果求和
 ## 26 warp层面的 reduce
 TODO  nv的文档
 数据量多的时候  block层面的reduce 好
