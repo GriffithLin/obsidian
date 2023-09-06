@@ -115,3 +115,6 @@ TODO  nv的文档
 
 
 
+## 29
+引入shared memory 反而性能下降，因为bank confilt
+TODO：解决这个问题
