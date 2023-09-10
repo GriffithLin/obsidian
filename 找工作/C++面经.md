@@ -18,4 +18,3 @@ C++11新特性:
 8.智能指针：你了解哪些智能指针？auto_ptr有什么缺点？Unique_ptr与auto_ptr的区别？Unique_ptr允许拷贝吗？Shared_ptr允许拷贝吗？如果让你实现一个shared_ptr，你会写哪些函数和哪些成员变量？  
 
 
-1.什么是多态？有什么好处？  

@@ -1,3 +1,7 @@
+TODO：
+•使用tensor RT在NV A100 GPU上部署resnet，前后提升了3.5x, 模型大小减小了3x，模型acc减小了0.1%
+
+
 https://app.mokahr.com/campus_apply/aqrose/38322#/job/79f504c3-c056-402c-af1c-7a5c6bc475db
 ![[Pasted image 20230909222039.png]]
 NTAHmCz、内推加好友 
