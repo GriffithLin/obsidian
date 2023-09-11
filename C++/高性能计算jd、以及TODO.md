@@ -1,5 +1,9 @@
 TODO：
 •使用tensor RT在NV A100 GPU上部署resnet，前后提升了3.5x, 模型大小减小了3x，模型acc减小了0.1%
+- SIMD
+- int8量化实战
+推荐的两篇论文
+resnet50  的结构有哪些算子，
 
 
 https://app.mokahr.com/campus_apply/aqrose/38322#/job/79f504c3-c056-402c-af1c-7a5c6bc475db
@@ -30,11 +34,5 @@ https://zhuanlan.zhihu.com/p/516116539
 
 ![[Pasted image 20230908104210.png]]
 
-
-
-TODO：
-int8量化实战
-推荐的两篇论文
-resnet50  的结构有哪些算子，
 
 
