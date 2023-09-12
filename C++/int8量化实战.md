@@ -24,3 +24,13 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 
 
 ![[Pasted image 20230912211424.png]]
+
+
+
+https://blog.csdn.net/m0_73409404/article/details/132187452
+验证cudnn安装成功
+
+ CUDA Version: 12.2
+cudnn_version.h
+![[Pasted image 20230912215905.png]]
+![[Pasted image 20230912215046.png]]
