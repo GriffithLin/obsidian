@@ -4,7 +4,7 @@ TODO：
 - int8量化实战
 推荐的两篇论文
 resnet50  的结构有哪些算子，
-
+- im2col
 
 https://app.mokahr.com/campus_apply/aqrose/38322#/job/79f504c3-c056-402c-af1c-7a5c6bc475db
 ![[Pasted image 20230909222039.png]]
