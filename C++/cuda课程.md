@@ -40,16 +40,20 @@ TODO 知乎——dropout float4.
 
 ## 14 gpu架构和峰值性能
 SM的内部结构
-
+一个线程对应一个CUDA Core
+一个Block 在 一个SM内运行， 但是SM可以运行多个block
+一个Grid中的多个Block 可能在不同的SM中运行
+![[Pasted image 20230918150921.png]]
 
 ## 15 ！！  gpu的内存层次结构
 
-local memory 用来防止寄存器的数据溢出，但它不在片上。 所以一个线程处理太多数据的时候就会导致性能下降。
-
-Global  memory：gpu显存。**连续访问**，一次内存事务，访问一段连续空间，应该减小内存事务的次数。
+local memory 用来防止寄存器的数据溢出，但它不在片上。 所以一个线程处理太多数据的时候就会把数据从寄存器内存中转移到local memory，导致性能下降。
+Global  memory：gpu显存。**最好连续访问**，一次内存事务，访问一段连续空间（128字节 ），应该减小内存事务的次数。  要的数据在显存上连续分布。
 shared memory： **bank conflict**
+constant memory： gpu显存的缓存，能减小显存的访问。广播 ：多个线程同时访问一个显存的数据时候，会发挥广播机制。 
+![[Pasted image 20230918152605.png]]
 
-constant memory： gpu显存的缓存，广播     ？？？
+
 
 ## 16 CPU和GPU架构的区别
 降低延迟（一次处理的时间更短）；       提升吞吐（一次处理更多的数据）
@@ -77,13 +81,23 @@ sort类：比较难
 ![[Pasted image 20230905200637.png]]
 
 ## 20 reduce 1  消除了 前三次 warp divergent
-使得一个block内的所有线程都在工作。而不是有一半的线程在等待。
+使得一个block内的所有线程都在工作。而不是有一半（第一次，后面更多）的线程在等待。
 
 volta架构之后，采用了 独立线程调度，即每个线程有了自己单独的指令指针，而非一个warp共享一个指令指针。
 
+**warp divergent**
 ## 21  reduce 2   消除shared memory bank conflict
 方式比较固定
 相加方式改为 前一半 加上后一半。
+0011223344
+5566778899
+改为 
+0123456789
+0123456789
+把块式的分配改为交替式。
+![[Pasted image 20230918161322.png]]
+
+**bank conflict**：smem将存储空间划分成了不同的bank，多个线程访问同一个bank的不同字段的时候，请求变成了串行。
 
 Padding  TODO 理解。
 TODO： Permute较难
@@ -92,10 +106,11 @@ TODO： Permute较难
 //TODO  让gridsize缩小一倍。
 这里是让blocksize 缩小一倍。
 
-在加载显存数据到smem 的时候干活，将后一半的数据加到前面来
-
+在加载显存数据到smem 的时候干活，将后一半的数据加到前面来。
+之前尽让他们加载，没有做加法。
+![[Pasted image 20230918161652.png]]
 ## 23 reduce 4
-对于 仅一个warp的轮次，采用warp级别的同步语句，减少开销。 性能提升巨大
+对于 仅一个warp的轮次，采用warp级别的同步语句，减少开销。 性能提升巨大。
 
 // TODO  我觉得不需要x变量，   nv官方建议这样的写法？？
 
@@ -111,7 +126,7 @@ TODO： Permute较难
 ## 26 warp层面的 reduce
 TODO  nv的文档
 数据量多的时候  block层面的reduce 好
-数据量少  warp层面。   临界点？
+数据量少  warp层面。  TODO临界点？
 
 
 
@@ -127,6 +142,9 @@ pos = atomicAdd(&l_n, 1) ;  原子级加法，返回值为 更新前 的l_n的�
 第一种优化：使用shared_memory，省去了显存上的atomicAdd，转化为 shared_memory的原子加。
 在block内部，先累积好。 使用shared_memory计数。
 再一个block选一个进程，进行全局累加，累加的过程中block内部的缓存（这里是l_n），记录为block的全局的偏移值。
+
+
+使用block内部的shared memory的原子加法代替显存上的原子加法。
 
 ## 31 讲了fp16 和fp32的区别， 基础知识
 
