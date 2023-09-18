@@ -1,3 +1,1 @@
- NVIDIA驱动 ——已安装
-CUDA-Tookite、
-
+https://blog.csdn.net/Augustus_WY/article/details/131759662
