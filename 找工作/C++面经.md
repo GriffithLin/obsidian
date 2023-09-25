@@ -3,6 +3,9 @@ https://blog.csdn.net/m0_50816320/article/details/129326768
 每日面经：
 https://zhuanlan.zhihu.com/p/621161187
 
+### C++学习资源：
+https://github.com/Light-City/CPlusPlusThings
+https://www.bilibili.com/video/BV1Rv4y1H7LB/?vd_source=bb6532dcd5b1d6b26125da900adb618e
 
 C++部分：  
 1.什么是多态？有什么好处？  

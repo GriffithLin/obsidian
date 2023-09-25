@@ -15,3 +15,8 @@
 - Stanford CS193G： [iTunes U](https://itunes.apple.com/cn/itunes-u/programming-massively-parallel/id384233322?mt=10)、[https://code.google.com/p/stanford-cs193g-sp2010/](https://code.google.com/p/stanford-cs193g-sp2010/)
 - Wisconsin ME964：[http://sbel.wisc.edu/Courses/ME964/2011/](http://sbel.wisc.edu/Courses/ME964/2011/)
 - EE171并行计算机架构：[http://www.nvidia.com/object/cudau_ucdavis](http://www.nvidia.com/object/cudau_ucdavis)
+
+
+
+	## 别的CUDA
+https://blog.csdn.net/just_sort/article/details/128272005
