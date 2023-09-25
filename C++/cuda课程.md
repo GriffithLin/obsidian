@@ -77,6 +77,7 @@ sort类：比较难
 坐标变换类：TODO！！： 公众号 transpose坐标变换
 
 ## 18 19 reduce0
+https://www.qinglite.cn/doc/6083647830b3c9ae3
 
 ![[Pasted image 20230905200637.png]]
 
@@ -113,9 +114,16 @@ TODO： Permute较难
 要点：block_number减少一半、一个block加载两倍线程数量的数据。
 拷贝显存数据到share_memory的时候相加。
 ## 23 reduce 4
-对于 仅一个warp的轮次，采用warp级别的同步语句，减少开销。 性能提升巨大。
+对于 仅一个warp的轮次，由于SIMD不需要进程同步。 性能提升巨大。
 
-// TODO  我觉得不需要x变量，   nv官方建议这样的写法？？
+### 使用 volatile字符修饰变量。
+https://stackoverflow.com/questions/21205471/cuda-in-warp-reduction-and-volatile-keyword?noredirect=1&lq=1
+表示线程每次都需要访问显存读取变量，而不是从寄存器缓存中。
+因为显存和缓存的数据是不一样的。
+	使用volatile变量修饰可以使得编译器尊重load-operate-store的执行过程，而不使得寄存器缓存`s_data[tid]`，以至于破坏了 implicit memory syncronisation。
+![[Pasted image 20230925112153.png]]
+
+
 
 ## 24 reduce 5   完全展开for循环   省掉for循环的判断和加法指令
 
