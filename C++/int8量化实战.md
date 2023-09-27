@@ -56,8 +56,15 @@ cudnn_version.h
 
 
 
-### pytorch
-GPU：
+### pytorch 量化bert、在MRPC数据集上
+https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/dynamic_quantization_bert_tutorial.ipynb#scrollTo=NdMd7b5aIgOE
+
+CPU：
+Size (MB): 438.000078
+Size (MB): 181.479338
+```The BERT model used in this tutorial (bert-base-uncased) has a vocabulary size V of 30522. With the embedding size of 768, the total size of the word embedding table is ~ 4 (Bytes/FP32) * 30522 * 768 = 90 MB. So with the help of quantization, the model size of the non-embedding table part is reduced from 350 MB (FP32 model) to 90 MB (INT8 model).
+```
+
 {'acc': 0.8602941176470589, 'f1': 0.9018932874354562, 'acc_and_f1': 0.8810937025412575}
 Evaluate total time (seconds): 137.1
 {'acc': 0.8553921568627451, 'f1': 0.8970331588132635, 'acc_and_f1': 0.8762126578380043}
