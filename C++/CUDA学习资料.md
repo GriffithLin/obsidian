@@ -23,8 +23,6 @@ https://blog.csdn.net/just_sort/article/details/128272005
 
 
 
-
-
 CUDA编程的门槛还是很高的网上的资料也参差不齐，CUDA与tensorrt是CV[领域模型](https://www.zhihu.com/search?q=%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3117821759%7D)部署的必备，[自动驾驶之心](https://www.zhihu.com/search?q=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%B9%8B%E5%BF%83&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3117821759%7D)
 
 为大家整理了cuda与tensorrt常见入门资料，希望能够帮助到大家！
