@@ -31,4 +31,4 @@ find . |grep  mkl_intel_ilp64
 增加环境变量
 #PATH=$PATH:/opt/intel/oneapi/mkl/2023.2.0/lib/intel64
 设置库路径
-`export LD_LIBRARY_PATH=/库的路径:$LD_LIBRARY_PATH`
+`export LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2023.2.0/lib/intel64:$LD_LIBRARY_PATH`
