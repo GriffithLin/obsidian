@@ -35,3 +35,14 @@ find . |grep  mkl_intel_ilp64
 
 
 Intel(R) Xeon(R) Platinum 8269CY CPU @ 2.50GHz
+
+
+5：
+
+M=N=K=2000:
+
+Average elasped time: 9.208475 second, performance: 1.737530 GFLOPS.
+
+7：
+M=N=K=1900:
+Average elasped time: 6.553506 second, performance: 2.093231 GFLOPS.
