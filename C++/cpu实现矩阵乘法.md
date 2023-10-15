@@ -55,7 +55,9 @@ Average elasped time: 6.364991 second, performance: 2.513750 GFLOPS.
 
 
 
-## 知识点
+## 知识点——只写面试可能会考到的（详见飞书文档
+https://ka33el2xr8q.feishu.cn/mindnotes/B7AbbSIVKmD8rynE90zcKgVInpf
+
 loop tiling、SIMD指令（AVX512）处理最内层乘法以及Data pack
 
 
