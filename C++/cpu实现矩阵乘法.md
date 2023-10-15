@@ -1,3 +1,5 @@
+https://github.com/yzhaiustc/Optimizing-DGEMM-on-Intel-CPUs-with-AVX512F
+
 ## 阿里云服务器
 ## mkl安装
 安装流程
@@ -46,3 +48,7 @@ Average elasped time: 9.208475 second, performance: 1.737530 GFLOPS.
 7：
 M=N=K=1900:
 Average elasped time: 6.553506 second, performance: 2.093231 GFLOPS.
+
+9；
+M=N=K=2000:
+Average elasped time: 6.364991 second, performance: 2.513750 GFLOPS.
