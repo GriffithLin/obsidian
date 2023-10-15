@@ -52,3 +52,8 @@ Average elasped time: 6.553506 second, performance: 2.093231 GFLOPS.
 9；
 M=N=K=2000:
 Average elasped time: 6.364991 second, performance: 2.513750 GFLOPS.
+
+
+
+## 知识点
+loop tiling、SIMD指令（AVX512）处理最内层乘法以及Data pack
