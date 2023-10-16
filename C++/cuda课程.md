@@ -9,9 +9,16 @@ https://www.zhihu.com/question/525995150/answer/2465200528
 谭升：https://face2ai.com/program-blog/#GPU%E7%BC%96%E7%A8%8B%EF%BC%88CUDA%EF%BC%89
 
 ## cuda程序运行：
+https://blog.csdn.net/douhuanmin123/article/details/130187037
 nvcc -V 查看是否安装
 which nvcc 查看路径
-
+将cuda添加到path
+nano ~/.zshrc 
+ctrl x 退出，选择保存
+```
+export PATH=/usr/local/cuda/bin:$PATHexport LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+```
+![[Pasted image 20231016110024.png]]
 
 
 ## 6
