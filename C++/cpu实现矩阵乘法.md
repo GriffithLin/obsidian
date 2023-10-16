@@ -34,7 +34,7 @@ find . |grep  mkl_intel_ilp64
 #PATH=$PATH:/opt/intel/oneapi/mkl/2023.2.0/lib/intel64
 设置库路径
 `export LD_LIBRARY_PATH=/opt/intel/oneapi/mkl/2023.2.0/lib/intel64:$LD_LIBRARY_PATH`
-
+`export LD_LIBRARY_PATH=/data3/linming/opt/intel/oneapi/mkl/2023.2.0/lib/intel64:$LD_LIBRARY_PATH`
 配置：
 Intel(R) Xeon(R) Platinum 8269CY CPU @ 2.50GHz
 
