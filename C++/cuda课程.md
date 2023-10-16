@@ -7,6 +7,13 @@ https://www.zhihu.com/question/525995150/answer/2465200528
 想进大厂的高性能计算岗位需要做哪些准备？、
 
 谭升：https://face2ai.com/program-blog/#GPU%E7%BC%96%E7%A8%8B%EF%BC%88CUDA%EF%BC%89
+
+## cuda程序运行：
+nvcc -V 查看是否安装
+which nvcc 查看路径
+
+
+
 ## 6
 ![[Pasted image 20230903215445.png]]
 
