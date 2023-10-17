@@ -211,6 +211,7 @@ http://lihuaxi.xjx100.cn/news/1425219.html?action=onClick
 
 ### 4、•优化方案：8个half为一组load和store，2个half为一组使用fp16 intrinsic来compute
 
+### 5、代码解读
 处理多个half  要安培及以上架构才能用
 
 内存对齐才能、向量化读
