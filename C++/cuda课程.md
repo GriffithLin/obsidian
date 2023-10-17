@@ -200,6 +200,8 @@ http://lihuaxi.xjx100.cn/news/1425219.html?action=onClick
 
 ==当前，GELU激活函数广泛应用于各个领域！！！尤其是在transformer模型中更为普遍！！！==
 
+访存密集型算子定义：
+
 
 避免 warp divengence 和 空闲线程
 
