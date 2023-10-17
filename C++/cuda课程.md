@@ -184,7 +184,7 @@ pos = atomicAdd(&l_n, 1) ;  原子级加法，返回值为 更新前 的l_n的�
 对于很多的训练任务，fp16也能足够。
 
 ## 32  FP16 GLUE 核  --elementwise
-### GELU算子
+### 1、GELU算子
 ![[Pasted image 20231017233112.png]]
 ![[Pasted image 20231017232349.png]]
 在输入为负数时逼近于0，输入为正数时逼近于线性激活
@@ -200,9 +200,16 @@ http://lihuaxi.xjx100.cn/news/1425219.html?action=onClick
 
 ==当前，GELU激活函数广泛应用于各个领域！！！尤其是在transformer模型中更为普遍！！！==
 
-访存密集型算子定义：计算/访存＜算力/带宽
+### 2、访存密集型算子定义：计算/访存＜算力/带宽
 
-避免 warp divengence 和 空闲线程
+### 3、•优化思路：访存密集型算子
+
+•从访存的角度优化，可以向量化load和store；利用shared memory
+
+•从计算的角度优化，提高并行度，即尽可能根据GPU资源分配尽可能多的block
+（避免 warp divengence 和 空闲线程——GELU不存在此问题）
+
+### 4、•优化方案：8个half为一组load和store，2个half为一组使用fp16 intrinsic来compute
 
 处理多个half  要安培及以上架构才能用
 
