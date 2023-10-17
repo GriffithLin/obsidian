@@ -183,8 +183,9 @@ pos = atomicAdd(&l_n, 1) ;  原子级加法，返回值为 更新前 的l_n的�
 ## 31 讲了fp16 和fp32的区别， 基础知识
 对于很多的训练任务，fp16也能足够。
 
-## 32  FP16 GLUE 核
+## 32  FP16 GLUE 核  --elementwise
 ### GELU算子
+![[Pasted image 20231017233112.png]]
 ![[Pasted image 20231017232349.png]]
 在输入为负数时逼近于0，输入为正数时逼近于线性激活
 http://lihuaxi.xjx100.cn/news/1425219.html?action=onClick
