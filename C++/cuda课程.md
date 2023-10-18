@@ -220,9 +220,15 @@ http://lihuaxi.xjx100.cn/news/1425219.html?action=onClick
 
 ## 34 混合算子
 
-
-
 可以写进简历：向量化的版本
+
+
+
+## 35 基于reduce的softmax kernel
+### 1、防止溢出，公式转换
+![[Pasted image 20231018104715.png]]
+
+2、
 
 矩阵乘法：
 https://roll.sohu.com/a/610859954_121119001
