@@ -228,8 +228,9 @@ http://lihuaxi.xjx100.cn/news/1425219.html?action=onClick
 ### 1、防止溢出，公式转换
 ![[Pasted image 20231018104715.png]]
 
-2、
+### 2、Softmax kernel组成：reduce_max, reduce_sum, exp, div
 
+### 3、
 矩阵乘法：
 https://roll.sohu.com/a/610859954_121119001
 
