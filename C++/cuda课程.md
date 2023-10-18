@@ -240,7 +240,7 @@ http://lihuaxi.xjx100.cn/news/1425219.html?action=onClick
 
 •定义好一个thread的寄存器用量
 
-## 36代码讲解
+## 36：代码讲解
 warp级别reduce、指一个warp处理一行数据。适合数据量不是太多的情况。如果一行有几千条数据，适合用block
 
 TODO：warp级别、block级别的reduce
