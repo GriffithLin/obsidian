@@ -224,7 +224,7 @@ http://lihuaxi.xjx100.cn/news/1425219.html?action=onClick
 
 
 
-## 35 基于reduce的softmax kernel
+## 35 、基于reduce的softmax kernel
 ### 1、防止溢出，公式转换
 ![[Pasted image 20231018104715.png]]
 
