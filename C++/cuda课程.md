@@ -230,7 +230,15 @@ http://lihuaxi.xjx100.cn/news/1425219.html?action=onClick
 
 ### 2、Softmax kernel组成：reduce_max, reduce_sum, exp, div
 
-### 3、
+### 3、实现要点：
+
+•Vector local reduce——一次向量读的最大值
+
+•Thread local reduce——线程内部的最大值
+
+•Warp local reduce——warp的最大值
+
+•定义好一个thread的寄存器用量
 矩阵乘法：
 https://roll.sohu.com/a/610859954_121119001
 
